@@ -51,8 +51,18 @@ Let's play a bulls and cows game."""
                     cow += 1
         return [bull, cow]
 
+    def fce_vysledek():
+        if pokus < 4:
+            vysledek = "amazing!"
+        elif pokus < 7:
+            vysledek = "average."
+        elif pokus < 10:
+            vysledek = "not so good."
+        else:
+            vysledek = "terrible, turn off the game!"
+        return vysledek
+
     pokus = 1
-    vysledek = " "
     mn_bull = "bulls"
     mn_cow = "cows"
     oddelovac = "-"
@@ -61,9 +71,9 @@ Let's play a bulls and cows game."""
     fcislo = fce_cislo()
     fhadanka = fce_hadanka()
     fbull = fce_bulls()
+    fvysledek = fce_vysledek()
 
     while fbull[0] != len(fcislo):
-        print(fhadanka)
         pokus += 1
         if fbull[0] and fbull[1] > 1:
             print(f"{fbull[0]} {mn_bull}, {fbull[1]} {mn_cow}")
@@ -86,18 +96,9 @@ Let's play a bulls and cows game."""
             fcislo = fce_cislo()
             fbull = fce_bulls()
 
-    if pokus < 4:
-        vysledek = "amazing!"
-    elif pokus < 7:
-        vysledek = "average."
-    elif pokus < 10:
-        vysledek = "not so good."
-    else:
-        vysledek = "terrible, turn off the game!"
-
     print(f"Correct, you've guessed the right number in {pokus} guesses!")
     print(oddelovac * 55)
-    print(f"That's {vysledek}")
+    print(f"That's {fvysledek}")
 
 
 fce_hra()
