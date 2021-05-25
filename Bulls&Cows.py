@@ -6,7 +6,6 @@ def fce_hra():
         pozdrav = "Hi there!"
         instrukce = """I've generated a random 4 digit number for you. 
 Let's play a bulls and cows game."""
-
         return print(pozdrav, oddelovac * 55, instrukce, oddelovac * 55, sep='\n')
 
     def fce_hadanka():
